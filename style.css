@@ -3,37 +3,22 @@ body { font-family: sans-serif; background: #1a1a24; color: #fff; margin: 0; pad
 .header-menu button { padding: 8px 16px; background: #ff7b00; border: none; color: #fff; border-radius: 4px; cursor: pointer; font-weight: bold; }
 
 .pachi-container { 
-    background-image: url("thunder_window.jpg");
-    background-size: 100% 100%;
-    width: 100%; 
-    max-width: 360px; 
-    height: 160px; 
-    display: flex; 
-    position: relative; 
-    margin-bottom: 20px; 
-    padding: 8px 6px; 
-    box-sizing: border-box;
+    background-image: url("thunder_window.jpg"); background-size: 100% 100%;
+    width: 100%; max-width: 360px; height: 160px; display: flex; position: relative; margin-bottom: 10px; padding: 8px 6px; box-sizing: border-box;
 }
 
-.reel-column { 
-    flex: 1; 
-    height: 100%; 
-    position: relative; 
-    overflow: hidden; 
-    margin: 0 4px; 
-    background: #000;
-    border-radius: 4px;
-}
+.reel-column { flex: 1; height: 100%; position: relative; overflow: hidden; margin: 0 4px; background: #000; border-radius: 4px; }
+.reel-column input[type="checkbox"] { position: absolute; top: 5px; left: 5px; z-index: 10; transform: scale(1.5); cursor: pointer; }
 
-.reel-scroll-box { width: 100%; height: 100%; overflow-y: scroll; -ms-overflow-style: none; scrollbar-width: none; }
+.reel-scroll-box { width: 100%; height: 100%; overflow-y: scroll; scrollbar-width: none; }
 .reel-scroll-box::-webkit-scrollbar { display: none; }
 .reel-image-wrap { position: relative; width: 100%; padding-top: 55px; padding-bottom: 110px; }
-.reel-image-wrap img { width: 100%; height: auto; display: block; }
+.reel-image-wrap img { width: 100%; display: block; }
 
 .list-container { width: 100%; max-width: 360px; }
 .card { background: #242533; padding: 10px; border-radius: 8px; margin-bottom: 10px; border-left: 5px solid #ff7b00; display: flex; align-items: center; }
-.card-no { font-weight: bold; color: #ff7b00; font-size: 15px; margin-right: 10px; }
+.card-no { font-weight: bold; color: #ff7b00; font-size: 15px; }
 
 #modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:1000; justify-content:center; align-items:center; }
-#modalContent { width:95%; max-height:90vh; overflow-y:auto; background:#242533; padding:10px; border-radius:10px; }
-#modalContent img { width: 100%; max-height: 85vh; object-fit: contain; border: 2px solid #fff; border-radius: 5px; }
+#modalContent { width:95%; max-height:90vh; background:#242533; padding:10px; border-radius:10px; overflow-y:auto; }
+.modal-img { width: 100%; max-height: 80vh; object-fit: contain; }

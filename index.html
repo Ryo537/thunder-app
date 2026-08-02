@@ -17,45 +17,29 @@
     </div>
 
     <div class="pachi-container">
-        <div class="reel-column"><div class="reel-scroll-box" id="leftReelBox"><div class="reel-image-wrap"><img src="thunder_left.jpg"></div></div></div>
-        <div class="reel-column"><div class="reel-scroll-box" id="midReelBox"><div class="reel-image-wrap"><img src="thunder_mid.jpg"></div></div></div>
-        <div class="reel-column"><div class="reel-scroll-box" id="rightReelBox"><div class="reel-image-wrap"><img src="thunder_right.jpg"></div></div></div>
+        <div class="reel-column">
+            <input type="checkbox" id="checkLeft" onchange="toggleLock(0)">
+            <div class="reel-scroll-box" id="leftReelBox"><div class="reel-image-wrap"><img src="thunder_left.jpg"></div></div>
+        </div>
+        <div class="reel-column">
+            <input type="checkbox" id="checkMid" onchange="toggleLock(1)">
+            <div class="reel-scroll-box" id="midReelBox"><div class="reel-image-wrap"><img src="thunder_mid.jpg"></div></div>
+        </div>
+        <div class="reel-column">
+            <input type="checkbox" id="checkRight" onchange="toggleLock(2)">
+            <div class="reel-scroll-box" id="rightReelBox"><div class="reel-image-wrap"><img src="thunder_right.jpg"></div></div>
+        </div>
     </div>
+
+    <div id="infoBar" style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 360px; margin: 10px auto; color: #fff; font-weight: bold; padding: 0 5px; box-sizing: border-box;">
+        <div id="reelPos" style="font-size: 14px; color: #aaa;">L:-- | M:-- | R:--</div>
+        <div id="progressDisplay" style="font-size: 14px; color: #ff7b00;">達成状況: 0/150</div>
+    </div>
+    
     <div class="list-container" id="collectionCards"></div>
 
-    <div id="modal" onclick="this.style.display='none'"><div id="modalContent" onclick="event.stopPropagation()"></div></div>
+    <div id="modal" onclick="closeModal()"><div id="modalContent" onclick="event.stopPropagation()"></div></div>
     
     <script src="main.js" defer></script>
-
-    <script>
-    window.getMissions = function(l, m, r) {
-        function range(s, e) { var a=[]; for(var i=s;i<=e;i++) a.push(i); return a; }
-        var t = [];
-        
-        // 左リールの条件分岐
-        if (l === 19) t = [1, 2];
-        else if (l === 12) t = range(3, 21);
-        else if (l === 5) t = range(22, 39);
-        else if (l === 6) t = [40].concat(range(41, 50));
-        else if (l === 10) t = range(51, 61);        // No.51〜61
-        else if (l === 17) t = range(62, 71);        // No.62〜71 (修正しました)
-        else if (l === 1) t = range(72, 77);
-        else if (l === 21) t = range(78, 85);
-        else if (l === 18) t = range(86, 89);
-        else if (l === 9) t = range(90, 91);
-        else if (l === 8) t = range(92, 100);
-        else if (l === 16) t = range(101, 102);
-        else if (l === 20) t = [103];
-        else if (l === 13) t = [104];
-        else if (l === 4) t = [105];
-
-        // 中リールの条件追加
-        if (m === 9) t.push(106);
-        if (m === 18) t.push(107);
-        if (m === 6) t.push(109);
-
-        return t;
-    };
-    </script>
 </body>
 </html>
